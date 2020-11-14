@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+	<masterLabel>Einstein OCR Viewer</masterLabel>
+	<targets>
+		<target>lightning__AppPage</target>
+		<target>lightning__HomePage</target>
+		<target>lightning__RecordPage</target>
+		<target>lightning__UtilityBar</target>
+		<target>lightning__FlowScreen</target>
+		<target>lightningCommunity__Page</target>
+		<target>lightningCommunity__Default</target>
+	</targets>
+	<targetConfigs>
+		<targetConfig targets="lightning__AppPage,lightning__HomePage,lightning__RecordPage">
+			<property
+			name="title"
+			type="String" 
+			label="Title"
+			description="Appears at the top of the component"
+			default="Einstein OCR Viewer"
+			/>
+			<supportedFormFactors>
+				<supportedFormFactor type="Large" />
+				<supportedFormFactor type="Small" />
+			</supportedFormFactors>
+		</targetConfig>
+		<targetConfig targets="lightning__UtilityBar,lightningCommunity__Default">
+			<property
+			name="title"
+			type="String" 
+			label="Title"
+			description="Appears at the top of the component"
+			default="Einstein OCR Viewer"
+		  />
+		</targetConfig>
+		<targetConfig targets="lightning__FlowScreen,">
+			<property
+			name="title"
+			type="String" 
+			label="Title"
+			description="Appears at the top of the component"
+			default="Einstein OCR Viewer"
+		  />
+		</targetConfig>
+	</targetConfigs>
+	
+</LightningComponentBundle>

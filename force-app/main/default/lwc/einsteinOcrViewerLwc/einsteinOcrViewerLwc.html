@@ -1,0 +1,57 @@
+<template>
+
+	<c-einstein-platform-card-lwc card-label={title}>
+		<c-einstein-playground-base-lwc>
+			<div class="einstein">
+				<lightning-layout class="slds-align_absolute-center">
+					<lightning-layout-item>
+						<label for="file-upload"> Upload an image containing text: </label>
+						<input id="file-upload" onchange={onFileSelected} type="file"/>
+					</lightning-layout-item> 
+				</lightning-layout>
+
+				<lightning-layout class="slds-align_absolute-center">
+					<lightning-layout-item>
+						<lightning-checkbox-group name="Checkbox Group"
+                              label="Options"
+                              options={checkboxOptions}
+                              value={checkboxValue}
+							  onchange={handleCheckboxChange}>
+						</lightning-checkbox-group>
+					</lightning-layout-item> 
+				</lightning-layout>
+
+				<lightning-layout class="slds-align_absolute-center">
+					<lightning-layout-item>
+					
+						<div class="image-container slds-m-around_large">
+							<div id="polaroid" class="einstein-drop polaroid" ondragover={onDragOver} ondrop={onDrop} >
+								<img id="imgItself" src={pictureSrc} alt="Image" class="picture" />
+								<div id="imgContainer" class="after" lwc:dom="manual"> </div>
+							</div>
+						</div>
+					</lightning-layout-item> 
+				</lightning-layout>
+
+				<lightning-layout class="slds-align_absolute-center">
+					<lightning-layout-item size="9">
+					<div class="scrollSizer">
+						<lightning-datatable
+								key-field="index"
+								columns={columns}
+								data={tableData}
+								hide-checkbox-column
+								default-sort-direction={defaultSortDirection}
+								sorted-direction={sortDirection}
+								sorted-by={sortedBy}
+								onsort={onHandleSort}>
+						</lightning-datatable>
+					</div>
+				</lightning-layout-item> 
+			</lightning-layout>
+	</div>
+
+		</c-einstein-playground-base-lwc>
+	</c-einstein-platform-card-lwc>
+    
+</template>
